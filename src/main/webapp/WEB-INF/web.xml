@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 
-    <display-name>px-server</display-name>
+    <display-name>ppiont</display-name>
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
@@ -83,4 +83,5 @@
         <exception-type>java.lang.Exception</exception-type>
         <location>/common/msg.html</location>
     </error-page>
+
 </web-app>
