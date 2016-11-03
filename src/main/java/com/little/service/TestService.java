@@ -4,6 +4,7 @@ import com.little.model.domain.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author pengx
@@ -21,6 +22,7 @@ public class TestService {
      * @param id
      * @return
      */
+    @Transactional(readOnly = true)
     public Test getRecord(int id){
 
         return hibernateTemplate.get(Test.class,id);

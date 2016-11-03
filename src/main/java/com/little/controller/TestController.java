@@ -27,7 +27,7 @@ public class TestController {
     public String index (HttpServletRequest request){
         Test test = testService.getRecord(1);
         request.setAttribute("test",test);
-        //主页
+        //测试页面
         return "test";
     }
 }

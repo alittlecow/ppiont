@@ -14,7 +14,6 @@
         <property name="packagesToScan">
             <value>com.little</value>
         </property>
-
     </bean>
 
     <bean id="hibernateTransactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
