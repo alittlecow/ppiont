@@ -1,6 +1,7 @@
 package com.core.pojo;
 
-import com.cpsdna.saasapi.core.web.JsonAnyGetterSupport;
+
+import com.core.web.JsonAnyGetterSupport;
 
 import java.util.ArrayList;
 import java.util.Collections;
