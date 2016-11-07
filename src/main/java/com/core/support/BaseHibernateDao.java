@@ -18,7 +18,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @author Huzl
  * @version 1.0.0
  */
 @Repository

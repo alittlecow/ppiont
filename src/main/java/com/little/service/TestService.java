@@ -1,8 +1,8 @@
 package com.little.service;
 
+import com.core.support.BaseHibernateDao;
 import com.little.model.domain.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class TestService {
 
     @Autowired
-    private HibernateTemplate hibernateTemplate;
+    private BaseHibernateDao hibernateDao;
 
     /**
      * 获取一条test表记录
@@ -25,6 +25,6 @@ public class TestService {
     @Transactional(readOnly = true)
     public Test getRecord(int id){
 
-        return hibernateTemplate.get(Test.class,id);
+        return hibernateDao.get(Test.class,id);
     }
 }

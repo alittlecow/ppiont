@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author Huzl
  * @version 1.0.0
  */
 public class JsonAnyGetterSupport implements Serializable {

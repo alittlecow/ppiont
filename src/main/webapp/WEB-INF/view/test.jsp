@@ -2,7 +2,7 @@
 <%@ include file="/common/taglibs.jsp" %>
 <html>
 <head>
-    <title>点点的人大才女</title>
+    <title>点点</title>
 </head>
 <body background="img/slide_1.jpg">
 <font color="#4169e1">welcome to the test page!</font><br/>

@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author Huzl
  * @version 1.0.0
  */
 public class BaseResponse<T> {

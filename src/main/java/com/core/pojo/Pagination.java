@@ -8,7 +8,6 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * @author Huzl
  * @version 1.0.0
  */
 public class Pagination<T> extends JsonAnyGetterSupport {
