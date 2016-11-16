@@ -28,6 +28,7 @@ public class TestController {
         Test test = testService.getRecord(1);
         request.setAttribute("test",test);
         log.info("-----日志功能正常----");
+        System.out.println(this);
         //测试页面
         return "test";
     }
