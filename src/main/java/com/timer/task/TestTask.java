@@ -2,9 +2,7 @@ package com.timer.task;
 
 import com.timer.quartz.SimpleJob;
 import org.quartz.*;
-import org.quartz.impl.JobDetailImpl;
 import org.quartz.impl.StdSchedulerFactory;
-import org.quartz.impl.triggers.CronTriggerImpl;
 
 import java.text.ParseException;
 
@@ -23,16 +21,13 @@ public class TestTask {
 
             JobDetail jobDetail= JobBuilder.newJob(SimpleJob.class)
                     .withIdentity("testJob_1","group_1")
-                    .build();
+                        .build();
 
             Trigger trigger= TriggerBuilder
                     .newTrigger()
                     .withIdentity("trigger_1","group_1")
                     .startNow()
-                    .withSchedule(SimpleScheduleBuilder.simpleSchedule()
-                            .withIntervalInSeconds(2) //时间间隔
-                            .withRepeatCount(5)        //重复次数(将执行6次)
-                    )
+                    .withSchedule(CronScheduleBuilder.cronSchedule(QUARTZ_CFG))
                     .build();
 
             scheduler.scheduleJob(jobDetail,trigger);
