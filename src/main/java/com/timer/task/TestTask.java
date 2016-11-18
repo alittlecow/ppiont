@@ -1,8 +1,9 @@
 package com.timer.task;
 
 import com.timer.quartz.SimpleJob;
-import org.quartz.*;
-import org.quartz.impl.StdSchedulerFactory;
+import com.timer.support.QuartzConfig;
+import com.timer.support.QuartzManager;
+import org.apache.log4j.Logger;
 
 import java.text.ParseException;
 
@@ -12,35 +13,20 @@ import java.text.ParseException;
  */
 public class TestTask {
 
-    private static final String QUARTZ_CFG = "0/2 * * * * ?";
 
-    public static void main(String[] args) throws ParseException {
-        SchedulerFactory factory = new StdSchedulerFactory();
-        try {
-            Scheduler scheduler = factory.getScheduler();
+    private static Logger log = Logger.getLogger(TestTask.class);
 
-            JobDetail jobDetail= JobBuilder.newJob(SimpleJob.class)
-                    .withIdentity("testJob_1","group_1")
-                        .build();
-
-            Trigger trigger= TriggerBuilder
-                    .newTrigger()
-                    .withIdentity("trigger_1","group_1")
-                    .startNow()
-                    .withSchedule(CronScheduleBuilder.cronSchedule(QUARTZ_CFG))
-                    .build();
-
-            scheduler.scheduleJob(jobDetail,trigger);
-            scheduler.start();
-
-
-
-        } catch (SchedulerException e) {
-            e.printStackTrace();
-        }
+    public static void main(String[] args) {
+        SimpleTaskByQuartz();
     }
 
 
+
+    public static void SimpleTaskByQuartz() {
+        QuartzManager.addJob(QuartzConfig.SIMPLE_JOB_NAME, SimpleJob.class, QuartzConfig.SIMPLE_JOB_QUARTZ_CFG);
+
+        log.info("Timer : TestTask @ "+QuartzConfig.SIMPLE_JOB_QUARTZ_CFG);
+    }
 
 }
 
