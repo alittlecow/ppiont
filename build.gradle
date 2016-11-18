@@ -44,4 +44,7 @@ dependencies {
     compile group: 'com.alibaba', name: 'fastjson', version: '1.2.7'
     //jstl包
     compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+    //定时任务
+    compile group: 'org.quartz-scheduler', name: 'quartz', version: '2.2.1'
+
 }
